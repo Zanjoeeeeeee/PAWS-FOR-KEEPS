@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Callback</title>
+</head>
+<body>
+<script>
+    // Get token from URL hash
+    const params = new URLSearchParams(window.location.hash.slice(1));
+    const accessToken = params.get("access_token");
+
+    if (accessToken) {
+        // Send message to opener (main window)
+        if (window.opener) {
+            window.opener.postMessage({ googleToken: accessToken }, "*");
+            window.close(); // close the popup
+        }
+    } else {
+        alert("Google login failed or canceled.");
+        window.close();
+    }
+</script>
+</body>
+</html>

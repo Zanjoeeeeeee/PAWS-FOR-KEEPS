@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paws for Keeps</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div class="container">
+
+    <div class="sidebar">
+        <div class="logo">
+          <img src="images/logo.png"
+               id="main-logo"
+               onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='block';"
+               alt="Logo">
+          
+          <div id="logo-placeholder" class="alt-logo"></div>
+          
+          <div class="logo-text">
+              <div class="logo-title">Paws for Keeps</div>
+              <div class="logo-subtitle">Admin Dashboard</div>
+          </div>
+        </div>
+        
+        <ul class="menu">
+          <li class="active">
+            <a href="index.html">
+              <i class="fas fa-th-large"></i>
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="inventory.html">
+              <i class="fas fa-box"></i>
+              Inventory
+            </a>
+          </li>
+          <li>
+            <a href="sales.html">
+              <i class="fas fa-shopping-cart"></i>
+              Sales
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <h4>Welcome</h4>
+            <p>Your daily pet business snapshot.</p>
+        </div>
+    </div>
+    
+    <div class="main">
+      
+      <div class="overview-card">
+        <div class="overview-icon-box">
+              </div>
+        <div class="overview-text">
+            <h1>Overview</h1>
+            <p>Calm, insightful, and ready to act.</p>
+        </div>
+      </div>
+
+      <section class="stats-grid">
+        <div class="stat-card stat-primary">
+            <div class="stat-icon">
+            <i class="fas fa-paw"></i>
+            </div>
+            <div class="stat-content">
+            <p class="stat-label">Total Products</p>
+            <h2 class="stat-value">142</h2>
+            <p class="stat-trend positive">
+                <i class="fas fa-arrow-up"></i>
+                <span>5 this week</span>
+            </p>
+            </div>
+        </div>
+
+        <div class="stat-card stat-warning">
+            <div class="stat-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-content">
+            <p class="stat-label">Low Stock</p>
+            <h2 class="stat-value">8</h2>
+            <p class="stat-trend negative">
+                <i class="fas fa-arrow-down"></i>
+                <span>2 this week</span>
+            </p>
+            </div>
+        </div>
+
+        <div class="stat-card stat-revenue">
+            <div class="stat-icon">
+            <i class="fas fa-coins"></i>
+            </div>
+            <div class="stat-content">
+            <p class="stat-label">Revenue</p>
+            <h2 class="stat-value">₱12,500</h2>
+            <p class="stat-trend positive">
+                <i class="fas fa-arrow-up"></i>
+                <span>12% up</span>
+            </p>
+            </div>
+        </div>
+      </section>
+
+      <div class="bottom-row">
+        
+        <div class="sales-section">
+          <div class="info-card">
+              <div class="card-header">
+                <h2>Sales Performance</h2>
+                <span class="card-subtitle">Revenue last 10 days</span>
+              </div>
+            
+            <img src="images/chart.png" alt="Sales Chart" class="sales-chart-img">
+            
+            <div class="sales-legend">
+                <span><i class="fas fa-circle" style="color:#4FC3F7; font-size:10px;"></i> Current</span>
+                <span><i class="fas fa-circle" style="color:#ddd; font-size:10px;"></i> Previous</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-product-section">
+          <div class="info-card product-card">
+            
+            <h2 style="margin-bottom: 15px;">Top Products</h2>
+            
+            <div class="product-strip">
+
+                <div class="product-highlight">
+                    <div class="product-image-container">
+                        <img src="images/dentastix.jpg" alt="PEDIGREE DENTASTIX">
+                    </div>
+                    
+                    <div class="description-box">
+                        <h3>PEDIGREE<br>DENTASTIX</h3>
+                        
+                        <div class="price-rating-row">
+                            <p class="price">₱158.00</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 5.0
+                            </div>
+                        </div>
+
+                        <div class="progress-bar">
+                             <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-highlight">
+                    <div class="product-image-container">
+                        <img src="images/kitekat.jpg" alt="WHISKAS">
+                    </div>
+                    
+                    <div class="description-box">
+                        <h3>WHISKAS<br>TUNA</h3>
+                        
+                        <div class="price-rating-row">
+                            <p class="price">₱149.00</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </div>
+                        </div>
+
+                        <div class="progress-bar">
+                             <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-highlight">
+                    <div class="product-image-container">
+                        <img src="images/whiskas.jpg" alt="WHISKAS">
+                    </div>
+                    
+                    <div class="description-box">
+                        <h3>WHISKAS<br>TUNA</h3>
+                        
+                        <div class="price-rating-row">
+                            <p class="price">₱149.00</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </div>
+                        </div>
+
+                        <div class="progress-bar">
+                             <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-highlight">
+                    <div class="product-image-container">
+                        <img src="images/shampoo.jpg" alt="WHISKAS">
+                    </div>
+                    
+                    <div class="description-box">
+                        <h3>WHISKAS<br>TUNA</h3>
+                        
+                        <div class="price-rating-row">
+                            <p class="price">₱149.00</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </div>
+                        </div>
+
+                        <div class="progress-bar">
+                             <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </body>
+</html>

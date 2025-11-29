@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="login-container">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <p class="subtitle"><b>Sign in</b> to manage your store</p>
+
+                <form onsubmit="return false;">
+                    <!-- Email -->
+                    <label class="label">Email</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="you_pawsforkeeps@gmail.com" required>
+                    </div>
+
+                    <!-- Password -->
+                    <label class="label">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="myPassword" placeholder="Enter your password" required>
+                    </div>
+
+                    <a href="#" class="forgot">Forgot Password?</a>
+
+                    <!-- Normal login -->
+                    <button type="button" class="login-btn" onclick="window.location.href='overview.html'">Login</button>
+
+                    <p class="or">Or sign in with</p>
+
+                    <!-- Social buttons -->
+                    <div class="social-buttons">
+                        <!-- Google -->
+                        <button type="button" class="google-btn" onclick="signInWithGoogle()">
+                            <img src="images/google.png" alt="Google Logo">
+                        </button>
+
+                        <!-- Facebook -->
+                        <button type="button" class="facebook-btn" onclick="signInWithFacebook()">
+                            <img src="images/facebook.png" alt="Facebook Logo">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Login Script -->
+    <script>
+        function signInWithGoogle() {
+            const clientId = "68023548656-0k5pgu98215m02tjtu07jo349c3dsrso.apps.googleusercontent.com";
+            const redirectUri = "http://127.0.0.1:5500/google-callback.html";
+            const scope = "email profile";
+            const width = 600;
+            const height = 700;
+            const left = (screen.width - width) / 2;
+            const top = (screen.height - height) / 2;
+
+            const oauthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=${encodeURIComponent(scope)}&prompt=select_account`;
+
+            window.open(
+                oauthUrl,
+                "googleSignIn",
+                `width=${width},height=${height},top=${top},left=${left},resizable=yes`
+            );
+        }
+
+        window.addEventListener("message", function (event) {
+            if (event.data.googleToken) {
+                console.log("Google token received:", event.data.googleToken);
+                window.location.href = "overview.html";
+            }
+        });
+    </script>
+
+    <!-- Facebook SDK -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '899850412611662', // replace with your App ID
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v17.0'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function signInWithFacebook() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    console.log('Facebook login success!', response);
+                    window.location.href = "overview.html";
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            }, {scope: 'public_profile,email', return_scopes: true});
+        }
+    </script>
+</body>
+
+</html>
